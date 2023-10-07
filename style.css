@@ -1,13 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    padding: 3vh 6vw;
     font-family: 'Nunito Sans', sans-serif;
-    ;
+
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 3vh 6vw;
 }
 
 .left-header {
@@ -101,10 +106,153 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2vh 16vw;
+    padding: 10vh 16vw;
+    background-image: url("assets/main-bg.jpg");
+    row-gap: 3.5vh;
+    padding: 3vh 6vw;
+
 }
 
-.heading {
+h1 {
+    font-family: 'Urbanist', sans-serif;
     font-weight: 800;
     font-size: 74px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 2vw;
+}
+
+button {
+    width: 224px;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+}
+
+.btn-black {
+    background-color: black;
+    color: white;
+}
+
+.btn-white {
+    color: black;
+    background-color: white;
+}
+
+.middle-section {
+    background-color: #001233;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    padding: 10vh 6vw;
+    row-gap: 6vh;
+}
+
+.middle-section b {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+li {
+    display: inline;
+    font-weight: 600;
+    font-size: 26px;
+}
+
+.whyme {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 30vh;
+    margin-top: 8vh;
+}
+
+span {
+    font-size: 19px;
+    color: #4361ee;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+h2 {
+    font-family: 'Nunito-sans', sans-serif;
+    font-weight: 700;
+    font-size: 60px;
+    color: white;
+    margin-bottom: 3vh;
+}
+
+.whyme-flex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    row-gap: 1.5vh;
+    position: relative;
+}
+
+.tabs {
+    display: flex;
+    border-radius: 25px;
+    background-color: #33415c;
+    width: max-content;
+    height: max-content;
+    padding: 5px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.tabs a {
+    padding: 1vh 1.5vw;
+    border-radius: 25px;
+    font-size: 17px;
+}
+
+.tabs a:hover {
+    background-color: white;
+    color: #33415c;
+
+}
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.whyme-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+
+.middle-section p {
+    font-size: 20px;
+    font-weight: 300;
+    color: rgba(175, 188, 226, 0.902)
 }

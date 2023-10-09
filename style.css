@@ -8,6 +8,23 @@ body {
 
 }
 
+main {
+    background-image: url("assets/main-bg.jpg");
+    position: relative;
+}
+
+.main-img {
+    position: absolute;
+    bottom: -34%;
+    left: 50%;
+    transform: translate(-50%) rotate(2deg);
+    border-radius: 5px;
+}
+
+.bg {
+    transform: translate(-50%) rotate(-4deg);
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -106,11 +123,8 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10vh 16vw;
-    background-image: url("assets/main-bg.jpg");
     row-gap: 3.5vh;
-    padding: 3vh 6vw;
-
+    padding: 10vh 0 53vh 0;
 }
 
 h1 {
@@ -157,29 +171,31 @@ button {
     display: flex;
     color: white;
     flex-direction: column;
-    align-items: center;
-    padding: 10vh 6vw;
-    row-gap: 6vh;
+    padding: 60vh 6vw 10vh 6vw;
+    row-gap: 10vh;
+    justify-content: left;
 }
 
 .middle-section b {
-    font-size: 18px;
+    font-size: 20px;
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 2px;
+    text-align: center;
+
 }
 
 ul {
     list-style: none;
     display: flex;
-    width: 100%;
+    width: 98%;
     justify-content: space-between;
 }
 
 li {
     display: inline;
-    font-weight: 600;
-    font-size: 26px;
+    font-weight: 800;
+    font-size: 24px;
 }
 
 .whyme {
@@ -200,7 +216,7 @@ span {
 h2 {
     font-family: 'Nunito-sans', sans-serif;
     font-weight: 700;
-    font-size: 60px;
+    font-size: 58px;
     color: white;
     margin-bottom: 3vh;
 }
@@ -211,7 +227,7 @@ h2 {
     width: 100%;
     justify-content: flex-start;
     row-gap: 1.5vh;
-    position: relative;
+
 }
 
 .tabs {
@@ -221,15 +237,13 @@ h2 {
     width: max-content;
     height: max-content;
     padding: 5px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
 }
 
 .tabs a {
     padding: 1vh 1.5vw;
     border-radius: 25px;
     font-size: 17px;
+
 }
 
 .tabs a:hover {
@@ -238,11 +252,16 @@ h2 {
 
 }
 
-a:link {
+.tabs a:link,
+.tabs a:visited {
     color: white;
     text-decoration: none;
 }
 
+.tabs a:visited:hover {
+    color: #33415c;
+
+}
 
 
 .whyme-grid {

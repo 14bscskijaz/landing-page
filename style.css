@@ -229,7 +229,15 @@ h2 {
     row-gap: 1.5vh;
 
 }
-
+.sticky {
+    position: fixed !important;
+    top: 0 !important;
+    transition: 1s;
+}
+.active{
+    color: #62bd19 !important;
+    text-decoration: underline !important;
+}
 .tabs {
     display: flex;
     border-radius: 25px;
@@ -237,6 +245,7 @@ h2 {
     width: max-content;
     height: max-content;
     padding: 5px;
+    position: relative;
 }
 
 .tabs a {
@@ -263,7 +272,6 @@ h2 {
 
 }
 
-
 .whyme-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -274,4 +282,7 @@ h2 {
     font-size: 20px;
     font-weight: 300;
     color: rgba(175, 188, 226, 0.902)
+}
+.footer-end{
+    height: 100vh;
 }

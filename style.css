@@ -111,6 +111,10 @@ header {
     font-weight: 400;
 }
 
+section {
+    padding: 8vh 6vw;
+}
+
 a {
     cursor: pointer;
 }
@@ -134,7 +138,7 @@ h1 {
     text-align: center;
 }
 
-h3 {
+.top-section p {
     font-size: 24px;
     font-weight: 400;
 }
@@ -229,15 +233,18 @@ h2 {
     row-gap: 1.5vh;
 
 }
+
 .sticky {
     position: fixed !important;
     top: 0 !important;
     transition: 1s;
 }
-.active{
-    color: #62bd19 !important;
-    text-decoration: underline !important;
+
+.active {
+    color: #33415c;
+    background-color: white;
 }
+
 .tabs {
     display: flex;
     border-radius: 25px;
@@ -248,29 +255,22 @@ h2 {
     position: relative;
 }
 
-.tabs a {
+.tab-options {
+    border: 2px solid transparent;
+}
+
+.tab-options {
+    color: white;
     padding: 1vh 1.5vw;
     border-radius: 25px;
     font-size: 17px;
-
-}
-
-.tabs a:hover {
-    background-color: white;
-    color: #33415c;
-
-}
-
-.tabs a:link,
-.tabs a:visited {
-    color: white;
     text-decoration: none;
 }
 
-.tabs a:visited:hover {
-    color: #33415c;
-
+.tab-options:hover {
+    border-color: white;
 }
+
 
 .whyme-grid {
     display: grid;
@@ -283,6 +283,35 @@ h2 {
     font-weight: 300;
     color: rgba(175, 188, 226, 0.902)
 }
-.footer-end{
-    height: 100vh;
+
+.why-dotnet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 4vh;
+}
+
+.tiles {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 4vw;
+    row-gap: 6vh;
+}
+
+.tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.tile img {
+    width: 100px;
+    object-fit: contain;
+}
+
+.tile p {
+    color: #6c757d;
+    font-weight: 600;
 }

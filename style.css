@@ -133,9 +133,9 @@ a:hover {
 
 h1 {
     font-family: 'Urbanist', sans-serif;
-    font-weight: 800;
-    font-size: 74px;
+    font-size: 54px;
     text-align: center;
+    width: 45%;
 }
 
 .top-section p {
@@ -233,9 +233,11 @@ h2 {
     row-gap: 1.5vh;
 
 }
-.footer-end{
+
+.footer-end {
     height: 100vh;
 }
+
 .sticky {
     position: fixed !important;
     top: 0 !important;
@@ -245,7 +247,7 @@ h2 {
 .active {
     color: #33415c !important;
     background-color: white;
-    
+
 }
 
 
@@ -255,9 +257,10 @@ h2 {
     background-color: #33415c;
     width: max-content;
     height: max-content;
-    padding: 5px;
     position: relative;
-    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 1vh 0.5vw;
     transition: 1s !important;
 }
 
@@ -270,6 +273,8 @@ h2 {
     padding: 1vh 1.5vw;
     border-radius: 25px;
     font-size: 17px;
+    letter-spacing: 0.04rem;
+    font-weight: 400;
     text-decoration: none;
 }
 
@@ -317,7 +322,70 @@ h2 {
     object-fit: contain;
 }
 
-.tile p {
+.tile p,
+.work-section p {
     color: #6c757d;
     font-weight: 600;
+}
+
+
+.work-section {
+    background-image: url(assets/main-bg.jpg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 14vh;
+}
+
+
+.work-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    row-gap: 4vh;
+    text-align: left;
+    padding: 6vh 4vw;
+}
+
+.work-card img {
+    height: 550px;
+    width: 100%;
+}
+
+.work-card h1 {
+    text-align: left;
+    width: 100%;
+}
+
+.btn-card {
+    background-color: #001233;
+    color: white;
+}
+
+.section-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-title h1 {
+    width: 75%;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    background-color: #001233;
+    transform: rotate(-1deg);
+    padding: 0 4vw;
+    height: 45vh;
+    border-radius: 5px;
 }

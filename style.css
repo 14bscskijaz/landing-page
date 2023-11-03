@@ -521,7 +521,7 @@ h2 {
     height: 45vh;
     border-radius: 5px;
     justify-content: center;
-    width: 100%;
+    width: -webkit-fill-available;
 }
 
 .contact-section .card-bg {

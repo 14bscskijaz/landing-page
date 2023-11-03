@@ -235,7 +235,7 @@
 				<h2>You are 5 steps away from a new application...</h2>
 				<button class="btn-white">Work with Me</button>
 			</div>
-			<div class="p-cards">
+			<div class="p-cards" id="p_cards">
 				<div class="p-card">
 					<span>01</span>
 					<h3>lorem</h3>
@@ -246,7 +246,7 @@
 						Inventore tempore nisi enim?</p>
 				</div>
 				<div class="p-card">
-					<span>01</span>
+					<span>02</span>
 					<h3>lorem</h3>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, officia labore! Iusto, illum?
 						Aliquid
@@ -255,7 +255,7 @@
 						Inventore tempore nisi enim?</p>
 				</div>
 				<div class="p-card">
-					<span>01</span>
+					<span>03</span>
 					<h3>lorem</h3>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, officia labore! Iusto, illum?
 						Aliquid
@@ -264,7 +264,7 @@
 						Inventore tempore nisi enim?</p>
 				</div>
 				<div class="p-card">
-					<span>01</span>
+					<span>04</span>
 					<h3>lorem</h3>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, officia labore! Iusto, illum?
 						Aliquid
@@ -273,7 +273,7 @@
 						Inventore tempore nisi enim?</p>
 				</div>
 				<div class="p-card">
-					<span>01</span>
+					<span>05</span>
 					<h3>lorem</h3>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, officia labore! Iusto, illum?
 						Aliquid
@@ -328,19 +328,44 @@
 			});
 		});
 
-		document.addEventListener('DOMContentLoaded', function () {
-			const cardContainer = document.getElementById('.p-cards');
-			let scrollPosition = 0;
+		// document.addEventListener('DOMContentLoaded', function () {
+		// 	const cardContainer = document.getElementById('p_cards');
+		// 	console.log(cardContainer);
+		// 	let scrollPosition = 0;
 
-			window.addEventListener('scroll', function () {
-				const newScrollPosition = window.scrollY;
+		// 	window.addEventListener('scroll', function () {
+		// 		const newScrollPosition = window.scrollY;
 
-				if (newScrollPosition > scrollPosition) {
-					cardContainer.style.transform = `translateY(-${newScrollPosition}px)`;
-				}
+		// 		if (newScrollPosition > scrollPosition) {
+		// 			cardContainer.style.transform = `translateY(-${newScrollPosition}px)`;
+		// 		}
 
-				scrollPosition = newScrollPosition;
-			});
-		});
+		// 		scrollPosition = newScrollPosition;
+		// 	});
+		// });
+		// script.js
+const section = document.querySelector('.p-cards');
+const cards = document.querySelectorAll('.p-card');
+
+function updateCardPosition() {
+    cards.forEach((card, index) => {
+        const rect = card.getBoundingClientRect();
+        const cardTop = rect.top;
+        const cardBottom = rect.bottom;
+
+        if (cardTop <= 0 && cardBottom >= 0) {
+            card.style.transform = 'translateY(' + (-cardTop+20) + 'px)';
+            card.style.zIndex = 0;
+        } else {
+            card.style.transform = 'translateY(0)';
+            card.style.zIndex = 1;
+        }
+    });
+}
+
+window.addEventListener('scroll', updateCardPosition);
+window.addEventListener('resize', updateCardPosition);
+window.addEventListener('load', updateCardPosition);
+
 	</script>
 </body>

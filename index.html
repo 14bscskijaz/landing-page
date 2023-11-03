@@ -332,7 +332,30 @@
 			</div>
 		</div>
 	</section>
+	<section class="contact-section">
+		<div style="display: flex; flex-direction: column; row-gap: 1vh; align-items: center;">
+			<span>FAQs</span>
+			<h1 style="width: 50%;">Frequently Asked Questions</h1>
+		</div>
+		<p>Got a question, drop me a message at <span>fiver.com/duoxsoft"</span>"</p>
+		<div class="contact-card">
+			<div class="card">
+				<div style="width: 70%;">
+					<h2>Let's build something great together</h2>
+				</div>
+				<button class="btn-white">Work with Me</button>
+			</div>
+			<div class="card-bg"></div>
+		</div>
+	</section>
+
+
+
 	<footer class="footer-end"></footer>
+
+
+
+
 
 	<script>
 		// changing position of tabs
@@ -391,28 +414,28 @@
 		// 	});
 		// });
 		// script.js
-const section = document.querySelector('.p-cards');
-const cards = document.querySelectorAll('.p-card');
+		const section = document.querySelector('.p-cards');
+		const cards = document.querySelectorAll('.p-card');
 
-function updateCardPosition() {
-    cards.forEach((card, index) => {
-        const rect = card.getBoundingClientRect();
-        const cardTop = rect.top;
-        const cardBottom = rect.bottom;
+		function updateCardPosition() {
+			cards.forEach((card, index) => {
+				const rect = card.getBoundingClientRect();
+				const cardTop = rect.top;
+				const cardBottom = rect.bottom;
 
-        if (cardTop <= 0 && cardBottom >= 0) {
-            card.style.transform = 'translateY(' + (-cardTop) + 'px)';
-            card.style.zIndex = 0;
-        } else {
-            card.style.transform = 'translateY(0)';
-            card.style.zIndex = 1;
-        }
-    });
-}
+				if (cardTop <= 0 && cardBottom >= 0) {
+					card.style.transform = 'translateY(' + (-cardTop) + 'px)';
+					card.style.zIndex = 0;
+				} else {
+					card.style.transform = 'translateY(0)';
+					card.style.zIndex = 1;
+				}
+			});
+		}
 
-window.addEventListener('scroll', updateCardPosition);
-window.addEventListener('resize', updateCardPosition);
-window.addEventListener('load', updateCardPosition);
+		window.addEventListener('scroll', updateCardPosition);
+		window.addEventListener('resize', updateCardPosition);
+		window.addEventListener('load', updateCardPosition);
 
 	</script>
 </body>

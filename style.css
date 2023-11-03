@@ -434,7 +434,7 @@ h2 {
     overflow: hidden;
     min-height: 100vh;
     transition: 1s ease-in-out;
-   
+
 }
 
 .p-card {
@@ -498,4 +498,35 @@ h2 {
 
 .review-section h1 {
     width: 80%;
+}
+
+.contact-section {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4vh;
+    text-align: center;
+}
+
+.contact-section .card {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #001233;
+    transform: rotate(-1deg);
+    height: 45vh;
+    border-radius: 5px;
+    justify-content: center;
+    width: 100%;
+}
+
+.contact-section .card-bg {
+    position: absolute;
+    background-color: #4361ee;
+    height: 45vh;
+    width: 100%;
+    transform: rotate(1deg);
+    border-radius: 5px;
 }

@@ -454,8 +454,45 @@ h2 {
     color: #b6b5bf;
 }
 
-
-
 .p-card span {
     font-size: 26px;
+}
+
+.review-section {
+    background-image: url(assets/main-bg.jpg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 8vh;
+}
+
+.reviews {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 8vw;
+    row-gap: 6vh;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 38vh;
+    color: black;
+    text-align: center;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.star-img {
+    width: 100px;
+}
+
+.client-img {
+    width: 60px;
+}
+
+.review-section h1 {
+    width: 80%;
 }

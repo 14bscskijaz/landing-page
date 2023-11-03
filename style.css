@@ -15,7 +15,7 @@ main {
 
 .main-img {
     position: absolute;
-    bottom: -34%;
+    bottom: -30%;
     left: 50%;
     transform: translate(-50%) rotate(2deg);
     border-radius: 5px;
@@ -414,19 +414,47 @@ h2 {
 
 .process-section {
     background-color: #001233;
+}
+
+.p-flex {
     display: flex;
-    justify-content: space-evenly;
+    width: 100%;
+    justify-content: space-between;
     align-items: flex-start;
+}
+
+.p-content {
+    width: 40%;
+}
+
+.p-cards {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    overflow: hidden;
+    height: 100vh;
+
 }
 
 .p-card {
     display: flex;
     flex-direction: column;
     background-color: #33415c;
+    background-color: #152438;
     padding: 4vh 4vw;
-    width: 70%;
     row-gap: 1vh;
+    transition: transform 0.3s;
 }
+
+.p-card h3 {
+    color: white;
+}
+
+.p-card p {
+    color: #b6b5bf;
+}
+
+
 
 .p-card span {
     font-size: 26px;

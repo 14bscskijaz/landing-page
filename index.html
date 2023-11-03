@@ -229,20 +229,59 @@
 		</div>
 	</section>
 	<section class="process-section">
-		<div class="process-content">
-			<span>Process</span>
-			<h2>You are 5 steps aaway from a new application...</h2>
-			<button class="btn-white">Work with Me</button>
-		</div>
-		<div class="process-cards">
-			<div class="p-card">
-				<span>01</span>
-				<h3>lorem</h3>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, officia labore! Iusto, illum? Aliquid
-					sequi esse nesciunt perspiciatis aut, accusamus, corrupti aperiam et ducimus nihil exercitationem.
-					Inventore tempore nisi enim?</p>
+		<div class="p-flex">
+			<div class="p-content">
+				<span>Process</span>
+				<h2>You are 5 steps away from a new application...</h2>
+				<button class="btn-white">Work with Me</button>
 			</div>
-
+			<div class="p-cards">
+				<div class="p-card">
+					<span>01</span>
+					<h3>lorem</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, officia labore! Iusto, illum?
+						Aliquid
+						sequi esse nesciunt perspiciatis aut, accusamus, corrupti aperiam et ducimus nihil
+						exercitationem.
+						Inventore tempore nisi enim?</p>
+				</div>
+				<div class="p-card">
+					<span>01</span>
+					<h3>lorem</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, officia labore! Iusto, illum?
+						Aliquid
+						sequi esse nesciunt perspiciatis aut, accusamus, corrupti aperiam et ducimus nihil
+						exercitationem.
+						Inventore tempore nisi enim?</p>
+				</div>
+				<div class="p-card">
+					<span>01</span>
+					<h3>lorem</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, officia labore! Iusto, illum?
+						Aliquid
+						sequi esse nesciunt perspiciatis aut, accusamus, corrupti aperiam et ducimus nihil
+						exercitationem.
+						Inventore tempore nisi enim?</p>
+				</div>
+				<div class="p-card">
+					<span>01</span>
+					<h3>lorem</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, officia labore! Iusto, illum?
+						Aliquid
+						sequi esse nesciunt perspiciatis aut, accusamus, corrupti aperiam et ducimus nihil
+						exercitationem.
+						Inventore tempore nisi enim?</p>
+				</div>
+				<div class="p-card">
+					<span>01</span>
+					<h3>lorem</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, officia labore! Iusto, illum?
+						Aliquid
+						sequi esse nesciunt perspiciatis aut, accusamus, corrupti aperiam et ducimus nihil
+						exercitationem.
+						Inventore tempore nisi enim?</p>
+				</div>
+			</div>
 		</div>
 	</section>
 
@@ -286,6 +325,21 @@
 						navLinks[index].classList.add("active");
 					}
 				});
+			});
+		});
+
+		document.addEventListener('DOMContentLoaded', function () {
+			const cardContainer = document.getElementById('.p-cards');
+			let scrollPosition = 0;
+
+			window.addEventListener('scroll', function () {
+				const newScrollPosition = window.scrollY;
+
+				if (newScrollPosition > scrollPosition) {
+					cardContainer.style.transform = `translateY(-${newScrollPosition}px)`;
+				}
+
+				scrollPosition = newScrollPosition;
 			});
 		});
 	</script>

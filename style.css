@@ -506,7 +506,7 @@ h2 {
     background-color: white;
     display: flex;
     flex-direction: column;
-    row-gap: 4vh;
+    row-gap: 8vh;
     text-align: center;
 }
 
@@ -522,7 +522,9 @@ h2 {
     border-radius: 5px;
     justify-content: center;
     width: -webkit-fill-available;
+    row-gap: 2vh;
 }
+
 
 .contact-section .card-bg {
     position: absolute;

@@ -401,7 +401,7 @@ function updateCardPosition() {
         const cardBottom = rect.bottom;
 
         if (cardTop <= 0 && cardBottom >= 0) {
-            card.style.transform = 'translateY(' + (-cardTop+20) + 'px)';
+            card.style.transform = 'translateY(' + (-cardTop) + 'px)';
             card.style.zIndex = 0;
         } else {
             card.style.transform = 'translateY(0)';

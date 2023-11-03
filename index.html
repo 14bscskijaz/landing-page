@@ -228,15 +228,15 @@
 			<div class="card-bg"></div>
 		</div>
 	</section>
-	<section class="process-section">
+	<section class="process-section wrapper">
 		<div class="p-flex">
 			<div class="p-content">
 				<span>Process</span>
 				<h2>You are 5 steps away from a new application...</h2>
 				<button class="btn-white">Work with Me</button>
 			</div>
-			<div class="p-cards" id="p_cards">
-				<div class="p-card">
+			<div class="p-cards header-wrapper" id="p_cards">
+				<div class="p-card card-item">
 					<span>01</span>
 					<h3>lorem</h3>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, officia labore! Iusto, illum?
@@ -245,7 +245,7 @@
 						exercitationem.
 						Inventore tempore nisi enim?</p>
 				</div>
-				<div class="p-card">
+				<div class="p-card card-item">
 					<span>02</span>
 					<h3>lorem</h3>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, officia labore! Iusto, illum?
@@ -254,7 +254,7 @@
 						exercitationem.
 						Inventore tempore nisi enim?</p>
 				</div>
-				<div class="p-card">
+				<div class="p-card card-item">
 					<span>03</span>
 					<h3>lorem</h3>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, officia labore! Iusto, illum?
@@ -263,7 +263,7 @@
 						exercitationem.
 						Inventore tempore nisi enim?</p>
 				</div>
-				<div class="p-card">
+				<div class="p-card card-item">
 					<span>04</span>
 					<h3>lorem</h3>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, officia labore! Iusto, illum?
@@ -272,7 +272,7 @@
 						exercitationem.
 						Inventore tempore nisi enim?</p>
 				</div>
-				<div class="p-card">
+				<div class="p-card card-item">
 					<span>05</span>
 					<h3>lorem</h3>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, officia labore! Iusto, illum?
@@ -333,7 +333,9 @@
 		</div>
 	</section>
 	<footer class="footer-end"></footer>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+   
 	<script>
 		// changing position of tabs
 		document.addEventListener("DOMContentLoaded", function () {
@@ -391,28 +393,68 @@
 		// 	});
 		// });
 		// script.js
-const section = document.querySelector('.p-cards');
-const cards = document.querySelectorAll('.p-card');
+// const section = document.querySelector('.p-cards');
+// const cards = document.querySelectorAll('.p-card');
 
-function updateCardPosition() {
-    cards.forEach((card, index) => {
-        const rect = card.getBoundingClientRect();
-        const cardTop = rect.top;
-        const cardBottom = rect.bottom;
+// function updateCardPosition() {
+//     cards.forEach((card, index) => {
+//         const rect = card.getBoundingClientRect();
+//         const cardTop = rect.top;
+//         const cardBottom = rect.bottom;
 
-        if (cardTop <= 0 && cardBottom >= 0) {
-            card.style.transform = 'translateY(' + (-cardTop) + 'px)';
-            card.style.zIndex = 0;
-        } else {
-            card.style.transform = 'translateY(0)';
-            card.style.zIndex = 1;
-        }
-    });
+//         if (cardTop <= 0 && cardBottom >= 0) {
+//             card.style.transform = 'translateY(' + (-cardTop) + 'px)';
+//             card.style.zIndex = 0;
+//         } else {
+//             card.style.transform = 'translateY(0)';
+//             card.style.zIndex = 1;
+//         }
+//     });
+// }
+
+// window.addEventListener('scroll', updateCardPosition);
+// window.addEventListener('resize', updateCardPosition);
+// window.addEventListener('load', updateCardPosition);
+ gsap.registerPlugin(ScrollTrigger);
+
+const cards  = document.querySelectorAll('.card-item');
+const header  = document.querySelector('.header-wrapper');
+const animation = gsap.timeline()
+let cardHeight
+
+
+
+function initCards(){
+  animation.clear()
+  cardHeight = cards[0].offsetHeight
+  console.log("initCards()", cardHeight)
+  cards.forEach((card, index) => {
+    if(index > 0){
+    //increment y value of each card by cardHeight
+      gsap.set(card, {y:index * cardHeight})
+    //animate each card back to 0 (for stacking)
+      animation.to(card, {y:0, duration:index*0.5, ease:"none"},0)
+     
+    }
+  })
 }
 
-window.addEventListener('scroll', updateCardPosition);
-window.addEventListener('resize', updateCardPosition);
-window.addEventListener('load', updateCardPosition);
+initCards()
+
+ScrollTrigger.create({
+  trigger:".wrapper",
+  start:"top top",
+  pin:true,
+  end:()=>{ return `+=${(cards.length * cardHeight) + header.offsetHeight}`},
+  scrub:true,
+  animation:animation,
+  markers:true,
+  invalidateOnRefresh:true
+})
+
+ScrollTrigger.addEventListener("refreshInit", initCards)
+
 
 	</script>
+	
 </body>

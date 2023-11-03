@@ -434,17 +434,19 @@ h2 {
     overflow: hidden;
     min-height: 100vh;
     transition: 1s ease-in-out;
-   
+    position: relative;
 }
 
+
 .p-card {
+    position: absolute;
     display: flex;
     flex-direction: column;
     background-color: #33415c;
     background-color: #152438;
     padding: 4vh 4vw;
     row-gap: 1vh;
-    transition: 1s ease-in-out;
+    transition: .3s ease-in-out;
     border: 2px solid rgb(53, 51, 51);
     border-radius: 5px;
 }

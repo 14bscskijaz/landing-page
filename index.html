@@ -332,12 +332,12 @@
 			</div>
 		</div>
 	</section>
-	<section class="contact-section">
+	<section class="contact-section" id="contact">
 		<div style="display: flex; flex-direction: column; row-gap: 1vh; align-items: center;">
 			<span>FAQs</span>
-			<h1 style="width: 50%;">Frequently Asked Questions</h1>
+			<h1 style="width: 50%;" id="white_clr">Frequently Asked Questions</h1>
 		</div>
-		<p>Got a question, drop me a message at <span>fiver.com/duoxsoft"</span>"</p>
+		<p id="w_clr">Got a question, drop me a message at <span>fiver.com/duoxsoft"</span>"</p>
 		<div class="contact-card">
 			<div class="card">
 				<div style="width: 70%;">
@@ -468,6 +468,27 @@
 		})
 
 		ScrollTrigger.addEventListener("refreshInit", initCards)
+// Function to check if the user has scrolled to the end of the page
+function isAtEndOfPage() {
+    return window.innerHeight + window.scrollY >= document.body.offsetHeight;
+}
+
+
+// Function to change the background color to black when at the end of the page
+function changeBackgroundColor() {
+    if (isAtEndOfPage()) {
+        document.getElementById("contact").style.backgroundColor = 'rgb(14, 23, 35)';
+		document.getElementById("white_clr").style.color = 'white';
+		document.getElementById("w_clr").style.color = 'white';
+    } else {
+        document.getElementById("contact").style.backgroundColor = 'white'; // Change this to your default background color
+		document.getElementById("white_clr").style.color = 'black';
+		document.getElementById("w_clr").style.color = 'black';
+    }
+}
+
+// Add an event listener to the window to check for scrolling
+window.addEventListener('scroll', changeBackgroundColor);
 
 
 	</script>

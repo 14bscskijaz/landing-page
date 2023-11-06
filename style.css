@@ -58,60 +58,42 @@ header {
     align-items: center;
 
 }
-
 .ring-container {
     position: relative;
-    height: 25px;
-    width: 25px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 16px;
+    width: 16px;
 }
 
 .circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 10px;
     height: 10px;
     background-color: #62bd19;
     border-radius: 50%;
-   margin-left: .5px;
+    position: absolute;
+    top: 6px;
+    left: 6px;
 }
-
 
 .ringring {
     border: 3px solid #62bd19;
     -webkit-border-radius: 30px;
-    height: 15px;
-    width: 15px;
+    height: 100%;
+    width: 100%;
     position: absolute;
-   
-    transform: translate(-50%, 0);
-    -webkit-animation: pulsate 1.5s ease-out;
-    -webkit-animation-iteration-count: infinite;
+     /* left: 15px;  */
+     /* top: 15px; */
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite; 
     opacity: 0.0
 }
-
 @-webkit-keyframes pulsate {
-    0% {
-        -webkit-transform: scale(0.1, 0.1);
-        opacity: 0.0;
-    }
-
-    50% {
-        opacity: 1.0;
-    }
-
-    100% {
-        -webkit-transform: scale(1.1, 1.1);
-        opacity: 0.0;
-    }
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
 }
-
 .sub-title p {
-    padding-left: 1vw;
+    padding-left: 10px;
     margin: 0;
     font-weight: 200;
 }

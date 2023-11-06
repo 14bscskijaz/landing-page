@@ -345,7 +345,7 @@
 
 				sections.forEach((section, index) => {
 					if (
-						section.offsetTop <= fromTop &&
+						section.offsetTop <= fromTop + 200 &&
 						section.offsetTop + section.offsetHeight > fromTop
 					) {
 						// Remove the "active" class from all links

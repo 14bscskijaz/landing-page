@@ -324,12 +324,13 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     text-align: center;
+    row-gap: 1vh;
 }
 
 .tile img {
-    width: 100px;
+    width: 50px;
     object-fit: contain;
 }
 

@@ -487,7 +487,7 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 8vw;
-    row-gap: 6vh;
+    row-gap: 8vh;
 }
 
 .review {
@@ -500,7 +500,7 @@ h2 {
     text-align: center;
     font-weight: 300;
     font-size: 20px;
-    row-gap: 2vh;
+    row-gap: 1.5vh;
 }
 
 .star-img {

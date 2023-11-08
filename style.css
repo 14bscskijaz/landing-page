@@ -480,6 +480,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     row-gap: 8vh;
+    padding-bottom: 16vh;
 }
 
 .reviews {
@@ -492,13 +493,14 @@ h2 {
 .review {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     height: 38vh;
     color: black;
     text-align: center;
     font-weight: 300;
     font-size: 20px;
+    row-gap: 2vh;
 }
 
 .star-img {

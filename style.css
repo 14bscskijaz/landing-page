@@ -16,13 +16,15 @@ main {
 .main-img {
     position: absolute;
     bottom: -30%;
-    left: 50%;
-    transform: translate(-50%) rotate(2deg);
+    transform: rotate(2deg);
     border-radius: 5px;
+    margin: 0 6vw;
+    width: 80vw;
+    height: 80vh;
 }
 
 .bg {
-    transform: translate(-50%) rotate(-4deg);
+    transform: rotate(-2deg);
 }
 
 header {
@@ -58,6 +60,7 @@ header {
     align-items: center;
 
 }
+
 .ring-container {
     position: relative;
     display: flex;
@@ -81,17 +84,29 @@ header {
     height: 100%;
     width: 100%;
     position: absolute;
-     /* left: 15px;  */
-     /* top: 15px; */
+    /* left: 15px;  */
+    /* top: 15px; */
     -webkit-animation: pulsate 1s ease-out;
-    -webkit-animation-iteration-count: infinite; 
+    -webkit-animation-iteration-count: infinite;
     opacity: 0.0
 }
+
 @-webkit-keyframes pulsate {
-    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
-    50% {opacity: 1.0;}
-    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+    0% {
+        -webkit-transform: scale(0.1, 0.1);
+        opacity: 0.0;
+    }
+
+    50% {
+        opacity: 1.0;
+    }
+
+    100% {
+        -webkit-transform: scale(1.2, 1.2);
+        opacity: 0.0;
+    }
 }
+
 .sub-title p {
     padding-left: 10px;
     margin: 0;

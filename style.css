@@ -37,12 +37,11 @@ header {
 .left-header {
     display: flex;
     column-gap: 1.5vw;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .left-header img {
-    height: 7vh;
-    width: 7vh;
+    width: 40px;
 }
 
 .title {

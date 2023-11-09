@@ -523,6 +523,7 @@ h2 {
     row-gap: 8vh;
     text-align: center;
     transition: .5s ease;
+    padding-bottom: 12vh;
 }
 
 .contact-section .card {
@@ -533,19 +534,22 @@ h2 {
     align-items: center;
     background-color: #001233;
     transform: rotate(-1deg);
-    height: 45vh;
+    height: 48vh;
     border-radius: 5px;
     justify-content: center;
     width: -webkit-fill-available;
     row-gap: 2vh;
+    right: 0;
+    left: 0;
 }
 
 
 .contact-section .card-bg {
     position: absolute;
     background-color: #4361ee;
-    height: 45vh;
-    width: 100%;
+    height: 48vh;
     transform: rotate(1deg);
     border-radius: 5px;
+    right: 0;
+    left: 0;
 }

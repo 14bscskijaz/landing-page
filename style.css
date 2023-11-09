@@ -36,21 +36,23 @@ header {
 
 .left-header {
     display: flex;
-    column-gap: 1.5vw;
+    column-gap: 1vw;
     align-items: flex-start;
 }
 
 .left-header img {
-    width: 40px;
+    width: 50px;
 }
 
 .title {
     display: flex;
     flex-direction: column;
+    margin-top: 5px;
 }
 
 .title b {
     font-size: 20px;
+    padding-left: 3px;
 }
 
 .sub-title {

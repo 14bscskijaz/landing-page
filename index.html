@@ -248,7 +248,7 @@
 	</section>
 	<section class="process-section wrapper">
 		<div class="p-flex">
-			<div class="p-content">
+			<div class="p-content" id="p-content">
 				<span>Process</span>
 				<h2>You are 5 steps away from a new application...</h2>
 				<button class="btn-white button"><span>Work with Me</span></button>
@@ -362,10 +362,12 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 
 	<script>
+		const content = document.getElementById("p-content");
 		// changing position of tabs
 		document.addEventListener("DOMContentLoaded", function () {
 			const stickyElement = document.querySelector(".tabs");
 			const belowElement = document.querySelector(".why-dotnet");
+			
 			const threshold = stickyElement.offsetTop; // You can adjust this value
 			const thresholdmax = belowElement.offsetTop; // You can adjust this value
 
@@ -378,6 +380,7 @@
 				} else {
 					stickyElement.classList.remove("sticky");
 				}
+				
 			});
 		});
 		// selecting options
@@ -480,12 +483,18 @@
 		// ScrollTrigger.addEventListener("refreshInit", initCards)
 		// Function to check if the user has scrolled to the end of the page
 		function isAtEndOfPage() {
+			if(window.scrollY >= 8240 && window.scrollY < 9300){
+					content.classList.add("sticky");
+				}else{
+					content.classList.remove("sticky");
+				}
 			return window.innerHeight + window.scrollY >= document.body.offsetHeight;
 		}
 
 
 		// Function to change the background color to black when at the end of the page
 		function changeBackgroundColor() {
+			console.log(window.scrollY)
 			if (isAtEndOfPage()) {
 				document.getElementById("contact").style.backgroundColor = 'rgb(14, 23, 35)';
 				document.getElementById("white_clr").style.color = 'white';

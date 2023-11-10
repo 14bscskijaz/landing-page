@@ -440,29 +440,29 @@
 		// window.addEventListener('scroll', updateCardPosition);
 		// window.addEventListener('resize', updateCardPosition);
 		// window.addEventListener('load', updateCardPosition);
-		gsap.registerPlugin(ScrollTrigger);
+		// gsap.registerPlugin(ScrollTrigger);
 
-		const cards = document.querySelectorAll('.card-item');
-		const header = document.querySelector('.header-wrapper');
-		const animation = gsap.timeline()
-		let cardHeight
+		// const cards = document.querySelectorAll('.card-item');
+		// const header = document.querySelector('.header-wrapper');
+		// const animation = gsap.timeline()
+		// let cardHeight
 
 
 
-		function initCards() {
-			animation.clear()
-			cardHeight = cards[0].offsetHeight
-			console.log("initCards()", cardHeight)
-			cards.forEach((card, index) => {
-				if (index > 0) {
-					//increment y value of each card by cardHeight
-					gsap.set(card, { y: index * cardHeight })
-					//animate each card back to 0 (for stacking)
-					animation.to(card, { y: 0, duration: index * 0.1, ease: "eas" }, 0)
+		// function initCards() {
+		// 	animation.clear()
+		// 	cardHeight = cards[0].offsetHeight
+		// 	console.log("initCards()", cardHeight)
+		// 	cards.forEach((card, index) => {
+		// 		if (index > 0) {
+		// 			//increment y value of each card by cardHeight
+		// 			gsap.set(card, { y: index * cardHeight })
+		// 			//animate each card back to 0 (for stacking)
+		// 			animation.to(card, { y: 0, duration: index * 0.1, ease: "eas" }, 0)
 
-				}
-			})
-		}
+		// 		}
+		// 	})
+		// }
 
 		initCards()
 

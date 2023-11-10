@@ -60,6 +60,7 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
+    line-height: 0px;
 
 }
 
@@ -479,6 +480,7 @@ h2 {
     min-height: 100vh;
     transition: 1s ease-in-out;
     position: relative;
+
 }
 
 

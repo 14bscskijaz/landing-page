@@ -130,11 +130,16 @@ section {
 
 a {
     cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
 }
 
 a:hover {
     color: gray;
 }
+
+
 
 .top-section {
     display: flex;

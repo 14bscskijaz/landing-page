@@ -28,11 +28,11 @@
 				</div>
 			</div>
 			<div class="right-header">
-				<a>Why Me</a>
-				<a>Work</a>
-				<a>Process</a>
-				<a>FAQs</a>
-				<a>Work with me</a>
+				<a href="#" onclick="transitionHandler(0)">Why Me</a>
+				<a href="#" onclick="transitionHandler(1)">Work</a>
+				<a href="#" onclick="transitionHandler(2)">Process</a>
+				<a href="#" onclick="transitionHandler(3)">Reviews</a>
+				<a href="#" onclick="transitionHandler(4)" style="color: blue;">Work with me</a>
 			</div>
 		</header>
 		<section class="top-section">
@@ -57,7 +57,7 @@
 			<li>Angular</li>
 			<li>Android</li>
 		</ul>
-		<div class="whyme">
+		<div class="whyme" id="why-section">
 			<div class="whyme-flex">
 				<span>Why me</span>
 				<h2>
@@ -173,7 +173,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="work-section">
+	<section class="work-section" id="work-section">
 		<div class="section-title">
 			<span>Work</span>
 			<h1>A taste of what i can do for you</h1>
@@ -342,7 +342,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="contact-section" id="contact">
+	<section class="contact-section" id="contact-section">
 		<div style="display: flex; flex-direction: column; row-gap: 1vh; align-items: center;">
 			<span>Contact Me</span>
 			<h1 style="width: 50%;" id="white_clr">Reach me out on Fiverr</h1>
@@ -404,6 +404,13 @@
 				});
 			});
 		});
+		// transition handler
+		const elements = ["why-section", "work-section", "process-section", "review-section", "contact-section"];
+		function transitionHandler(ind) {
+			const content = document.getElementById(elements[ind]);
+			console.log(content);
+			content.scrollIntoView();
+		}
 
 
 		// Function to check if the user has scrolled to the end of the page
@@ -431,7 +438,7 @@
 				document.getElementById("white_clr").style.color = 'white';
 				document.getElementById("w_clr").style.color = 'white';
 			} else {
-				document.getElementById("contact").style.backgroundColor = 'white'; // Change this to your default background color
+				document.getElementById("contact-section").style.backgroundColor = 'white'; // Change this to your default background color
 				document.getElementById("white_clr").style.color = 'black';
 				document.getElementById("w_clr").style.color = 'black';
 			}

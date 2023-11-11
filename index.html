@@ -409,7 +409,7 @@
 		function transitionHandler(ind) {
 			const content = document.getElementById(elements[ind]);
 			console.log(content);
-			content.scrollIntoView();
+			content.scrollIntoView({behavior: "smooth", block: "start"});
 		}
 
 
@@ -427,14 +427,14 @@
 			}
 		})
 		function isAtEndOfPage() {
-			return window.innerHeight + window.scrollY >= document.body.offsetHeight;
+			return window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
 		}
 
 
 		// Function to change the background color to black when at the end of the page
 		function changeBackgroundColor() {
 			if (isAtEndOfPage()) {
-				document.getElementById("contact").style.backgroundColor = 'rgb(14, 23, 35)';
+				document.getElementById("contact-section").style.backgroundColor = 'rgb(14, 23, 35)';
 				document.getElementById("white_clr").style.color = 'white';
 				document.getElementById("w_clr").style.color = 'white';
 			} else {

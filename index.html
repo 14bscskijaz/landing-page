@@ -246,7 +246,7 @@
 			<div class="card-bg"></div>
 		</div>
 	</section>
-	<section class="process-section wrapper">
+	<section class="process-section wrapper" id="process-section">
 		<div class="p-flex">
 			<div class="p-content" id="p-content">
 				<span>Process</span>
@@ -288,7 +288,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="review-section">
+	<section class="review-section" id="review-section">
 		<div style="display: flex; flex-direction: column; row-gap: 1vh; align-items: center;">
 			<span>Testimonials</span>
 			<h1>What they say about me</h1>
@@ -362,27 +362,27 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 
 	<script>
-		const content = document.getElementById("p-content");
 		// changing position of tabs
 		document.addEventListener("DOMContentLoaded", function () {
 			const stickyElement = document.querySelector(".tabs");
 			const belowElement = document.querySelector(".why-dotnet");
-			
+
 			const threshold = stickyElement.offsetTop; // You can adjust this value
 			const thresholdmax = belowElement.offsetTop; // You can adjust this value
 
 			window.addEventListener("scroll", function () {
 				if (
 					window.pageYOffset >= threshold &&
-					window.pageYOffset < thresholdmax - 100
-				) {
+					window.pageYOffset < thresholdmax - 175) {
 					stickyElement.classList.add("sticky");
 				} else {
 					stickyElement.classList.remove("sticky");
 				}
-				
+
 			});
 		});
+
+
 		// selecting options
 		document.addEventListener("DOMContentLoaded", function () {
 			const navLinks = document.querySelectorAll(".tabs a");
@@ -405,96 +405,27 @@
 			});
 		});
 
-		// document.addEventListener('DOMContentLoaded', function () {
-		// 	const cardContainer = document.getElementById('p_cards');
-		// 	console.log(cardContainer);
-		// 	let scrollPosition = 0;
 
-		// 	window.addEventListener('scroll', function () {
-		// 		const newScrollPosition = window.scrollY;
-
-		// 		if (newScrollPosition > scrollPosition) {
-		// 			cardContainer.style.transform = `translateY(-${newScrollPosition}px)`;
-		// 		}
-
-		// 		scrollPosition = newScrollPosition;
-		// 	});
-		// });
-		// script.js
-		// const section = document.querySelector('.p-cards');
-		// const cards = document.querySelectorAll('.p-card');
-
-		// function updateCardPosition() {
-		//     cards.forEach((card, index) => {
-		//         const rect = card.getBoundingClientRect();
-		//         const cardTop = rect.top;
-		//         const cardBottom = rect.bottom;
-
-		//         if (cardTop <= 0 && cardBottom >= 0) {
-		//             card.style.transform = 'translateY(' + (-cardTop) + 'px)';
-		//             card.style.zIndex = 0;
-		//         } else {
-		//             card.style.transform = 'translateY(0)';
-		//             card.style.zIndex = 1;
-		//         }
-		//     });
-		// }
-
-		// window.addEventListener('scroll', updateCardPosition);
-		// window.addEventListener('resize', updateCardPosition);
-		// window.addEventListener('load', updateCardPosition);
-		// gsap.registerPlugin(ScrollTrigger);
-
-		// const cards = document.querySelectorAll('.card-item');
-		// const header = document.querySelector('.header-wrapper');
-		// const animation = gsap.timeline()
-		// let cardHeight
-
-
-
-		// function initCards() {
-		// 	animation.clear()
-		// 	cardHeight = cards[0].offsetHeight
-		// 	console.log("initCards()", cardHeight)
-		// 	cards.forEach((card, index) => {
-		// 		if (index > 0) {
-		// 			//increment y value of each card by cardHeight
-		// 			gsap.set(card, { y: index * cardHeight })
-		// 			//animate each card back to 0 (for stacking)
-		// 			animation.to(card, { y: 0, duration: index * 0.1, ease: "eas" }, 0)
-
-		// 		}
-		// 	})
-		// }
-
-		// initCards()
-
-		// ScrollTrigger.create({
-		// 	trigger: ".wrapper",
-		// 	start: "top top",
-		// 	pin: true,
-		// 	end: () => { return `+=${(cards.length * cardHeight) + header.offsetHeight}` },
-		// 	scrub: true,
-		// 	animation: animation,
-		// 	markers: true,
-		// 	invalidateOnRefresh: true
-		// })
-
-		// ScrollTrigger.addEventListener("refreshInit", initCards)
 		// Function to check if the user has scrolled to the end of the page
+		const content = document.getElementById("p-content");
+		var p_ele = document.getElementById("process-section");
+		var r_ele = document.getElementById("review-section");
+		var p_threshold = p_ele.offsetTop;
+		var r_threshold = r_ele.offsetTop;
+		window.addEventListener("scroll", function () {
+			if (window.pageYOffset >= p_threshold && window.pageYOffset < (r_threshold)) {
+				content.classList.add("sticky-pro");
+			} else {
+				content.classList.remove("sticky-pro");
+			}
+		})
 		function isAtEndOfPage() {
-			if(window.scrollY >= 8240 && window.scrollY < 9300){
-					content.classList.add("sticky");
-				}else{
-					content.classList.remove("sticky");
-				}
 			return window.innerHeight + window.scrollY >= document.body.offsetHeight;
 		}
 
 
 		// Function to change the background color to black when at the end of the page
 		function changeBackgroundColor() {
-			console.log(window.scrollY)
 			if (isAtEndOfPage()) {
 				document.getElementById("contact").style.backgroundColor = 'rgb(14, 23, 35)';
 				document.getElementById("white_clr").style.color = 'white';
